@@ -1,50 +1,99 @@
-# Portfólio Power BI - Sandra Souza
+# Portfólio Power BI — Dashboards e KPIs
 
-> 🎯 **Transformo dados em decisões — com propósito, dedicação e Power BI.**
-> 🎯 **Turning data into decisions — with purpose, dedication, and Power BI.**
+Transformo dados em decisões. Este portfólio reúne dashboards criados no Power BI (DAX/Power Query), com foco em problemas reais de negócio e comunicação clara para tomada de decisão.
 
-Bem-vindo(a) ao meu portfólio! Aqui compartilho projetos que desenvolvi durante minha jornada de aprendizado em Análise de Dados. Todos os dashboards foram criados com base em desafios de bootcamps, estudos independentes e orientações de professores da área.
-Welcome to my portfolio! Here you’ll find projects developed during my career transition into the Data Analysis field. Each dashboard was created from real business scenarios, bootcamps, and mentorships with industry professionals.
+- Ferramentas: Power BI (DAX/Power Query), Excel, SQL, Python (pandas)
+- Temas: modelagem (estrela), KPIs, data cleaning, visualização, storytelling
 
----
+## Projetos
 
-## 🧠 O que você vai encontrar aqui/ What you’ll find
+### 1) Vendas — Receita, Margem e Ticket 
+Problema: acompanhar receita, margem e ticket por período, produto e canal, entendendo sazonalidade e top performers.  
+KPIs: Receita, Margem, Ticket Médio, Crescimento vs. Ano Anterior, Top N por produto/canal.  
+Imagens:
+- Visão geral:  
+  ![Vendas Overview](imagens/vendas_overview.png)
+- Por canal/produto:  
+  ![Vendas Canal](imagens/vendas_canal.png)
 
-- Dashboards profissionais com **Power BI**  
-  Professional dashboards with **Power BI**
-- Aplicações de **DAX**, **Excel** e **SQL**  
-  DAX, **Excel** and **SQL** applications
-- Projetos com foco em **situações reais de negócios**  
-  Projects based on **real-world business challenges**
+### 2) Financeiro — Receitas, Despesas e Saldo
+Problema: evoluções de receita, despesa e saldo mensal para decisões de orçamento e custos.  
+KPIs: Receita, Despesa, Saldo, Variação M/M e A/A, Real vs. Orçado.  
+Imagens:
+- Visão geral:  
+  ![Financeiro Overview](imagens/financeiro_overview.png)
+- Centros de custo / categorias:  
+  ![Financeiro Centros](imagens/financeiro_centros.png)
+
+### 3) Estoque — OTIF, SLA e Giro
+Problema: melhorar nível de serviço e disponibilidade com monitoramento de prazos e rupturas.  
+KPIs: OTIF, SLA cumprido, Lead time, Ruptura %, Giro de estoque, Cobertura (dias).  
+Imagens:
+- Visão geral:  
+  ![Estoque Overview](imagens/estoque_overview.png)
+- Itens críticos / ruptura:  
+  ![Estoque Ruptura](imagens/estoque_ruptura.png)
+
+### 4) Pessoas (RH) — Turnover, Absenteísmo e Remuneração
+Problema: entender rotatividade, ausências e remuneração por área/cargo para decisões de pessoas.  
+KPIs: Turnover %, Absenteísmo %, Tempo médio de casa, Remuneração média, Contratações/Saídas.  
+Imagens:
+- Visão geral:  
+  ![RH Overview](imagens/rh_overview.png)
+- Por áreas/cargos:  
+  ![RH Areas](imagens/rh_areas.png)
+
+### 5) Produção — Volume por Categoria e Tendências
+Problema: acompanhar produção por tipo/categoria ao longo do tempo e por região/planta.  
+KPIs: Volume produzido, Capacidade utilizada, Tendência por categoria, Mix de produção.  
+Imagens:
+- Visão geral:  
+  ![Producao Overview](imagens/producao_overview.png)
+- Por categoria/região:  
+  ![Producao Categoria](imagens/producao_categoria.png)
+
+## Processo e Modelagem 
+- ETL no Power Query: limpeza, tipos e padronização de categorias.
+- Modelagem em esquema estrela: tabela fato + dimensões (Calendário, Produto/Cliente/Área, etc.).
+- DAX para KPIs e comparativos (YoY, M/M, Top N, contribuições).
+
+___________________________________________________________________________________________________________________________________________________________
+## Medidas DAX 
+```DAX
+-- Ticket Médio
+Ticket Médio = DIVIDE([Receita], SUM(F_Vendas[Quantidade]))
+
+-- Crescimento vs Ano Anterior
+Crescimento vs LY % =
+VAR atual = [Receita]
+VAR passado = CALCULATE([Receita], DATEADD('Calendario'[Data], -1, YEAR))
+RETURN DIVIDE(atual - passado, passado)
+
+--Tabela Calendadrio 
+
+Calendario =
+VAR DATAMINIMA = MIN( 'Tabela_Fato'[Data] ) 
+VAR DATAMAXIMA = MAX( 'Tabela_Fato'[Data] ) 
+
+RETURN
+    ADDCOLUMNS (
+        CALENDAR (DATAMINIMA, DATAMAXIMA),  
+        "Ano", YEAR([Date]),  
+        "Mês", MONTH([Date]),  
+        "Dia", DAY([Date]),  
+        "Nome do Mês", UPPER(FORMAT([Date], "mmm")),
+        "Dia da semana", WEEKDAY([Date],2),
+        "Nome do dia da semana", FORMAT([Date], "ddd"),
+        "Trimestre", "Q" & FORMAT([Date], "Q"),
+        "Ano-Mês", FORMAT([Date], "YYYY-MM"),
+        "Semestre", "S" & CEILING(MONTH([Date]) / 6, 1)
+    )
+______________________________________________________________________________________________________________________________
 
 
----
-
-## ✨ Aprendizados até aqui/Key Learnings
-
-- Transformação e limpeza de dados  
-  Data cleaning and transformation
-- Criação de medidas DAX e KPIs visuais  
-  Creating DAX measures and visual KPIs
-- Dashboards interativos e responsivos  
-  Interactive and responsive dashboards
-- Conexão com Excel e SQL Server  
-  Data integration with Excel and SQL Server
-
-
----
-
-## 📂 Projetos/Projects
-
-| Projeto                     |  Descrição (PT/EN)                                                                     
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Projeto Financeiro I](#)   | Acompanhamento de receitas, despesas e saldo mensal com KPIs e gráficos comparativos / Analysis of revenue, expenses, and monthly balance.  | 
-| [Projeto Logística I](#)    | Análise de pedidos, custos e entregas, com destaques para influenciadores logísticos / Costs, deliveries, orders, and logistics influencers.|
-| [Produção de Veículos I](#) | Painel de controle da produção por categoria de veículos ao longo dos anos / Vehicle production by type and region.                         |
-| [Dados Funcionários I](#)   | Análise de turnover, tempo de empresa, absenteísmo e remuneração por cargo / HR data: roles, tenure, salaries.                              |
-| [Análise Vendas I](#)       | Métricas de vendas e lucratividade por região, produto e categoria / Sales performance by region and category.                              |                             
-
----
+-- Como visualizar
+As imagens dos dashboards estão na pasta /imagens.
+Caso queira os arquivos .pbix, entre em contato que compartilho versões com dados sintéticos.
 
 ## 📬 Contato
 
