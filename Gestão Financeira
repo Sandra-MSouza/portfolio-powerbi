@@ -1,0 +1,77 @@
+Projeto: Gestão Financeira
+🎯 Contexto
+
+Este dashboard foi desenvolvido a partir de uma base de dados financeiros simulada, com o objetivo de analisar a saúde financeira da empresa. O foco está em entender o fluxo de caixa, composição das despesas, margem de lucro e concentração de clientes, permitindo uma visão estratégica e prática para tomada de decisão.
+
+📊 Aba 1 – Resumo Gerencial
+
+Esta primeira aba traz uma visão geral do desempenho financeiro, com foco no fluxo de caixa, entradas, saídas e lucratividade mensal.
+
+Principais indicadores:
+
+💰 Mês mais lucrativo: identifica o mês com maior saldo positivo.
+
+📉 Mês negativo: mostra o mês com maior perda financeira.
+
+📊 Saldo de Caixa, Total de Entradas, Total de Saídas e Margem de Lucro.
+
+Gráficos e análises:
+
+Acumulado de Transações x Fluxo de Caixa: compara o saldo mensal e o acumulado de entradas, destacando períodos críticos.
+
+Margem de Lucro por Mês: evidencia oscilações e eficiência operacional.
+
+Débito x Crédito: demonstra o equilíbrio entre pagamentos e recebimentos.
+
+Insight:
+Apesar de entradas consistentes, há meses em que o saldo líquido fica negativo, principalmente por aumento de despesas fixas e de lazer.
+
+💸 Aba 2 – Análise de Custos
+
+Esta aba detalha a composição e o comportamento das despesas da empresa ao longo do tempo.
+
+Principais indicadores:
+
+📅 Mês mais lucrativo e mês negativo destacados no topo.
+
+💵 Total de Despesas consolidado.
+
+🔄 Soma do Fluxo de Caixa mostrando o comportamento financeiro acumulado.
+
+Gráficos e análises:
+
+Total de Despesas por Categoria: classifica despesas fixas, investimentos, lazer e salários.
+
+Fluxo de Saída (linha temporal): mostra os picos de gastos e períodos de maior desembolso.
+
+Insight:
+O aumento das despesas fixas e de lazer em determinados meses impactou diretamente a margem de lucro. É necessário revisar contratos e otimizar custos.
+
+👥 Aba 3 – Clientes x Transações
+
+Foco na análise de receita e concentração de clientes, avaliando o comportamento das transações financeiras.
+
+Principais indicadores:
+
+📈 Total de Transações por Cliente.
+
+💳 Visão Geral por Tipo de Pagamento (Pix, Cartão de Crédito, Boleto, Transferência Bancária).
+
+📋 Tabela detalhada com cliente, tipo de pagamento e soma de transações.
+
+Insight:
+O Cliente B (Pessoa Jurídica) concentrou a maior parte das transações de crédito, indicando dependência de poucos clientes. Recomenda-se diversificar a base de clientes para reduzir riscos de receita concentrada.
+
+📌 Conclusão
+
+O projeto Gestão Financeira apresentou uma visão completa da estrutura financeira, permitindo compreender onde estão os principais custos, quais clientes mais contribuem para a receita e como a empresa pode melhorar seu desempenho financeiro.
+
+Recomendações:
+
+Revisar contratos e despesas fixas.
+
+Avaliar o ROI dos investimentos e campanhas.
+
+Diversificar a base de clientes.
+
+Fortalecer o controle de caixa para manter margens positivas.
