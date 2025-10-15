@@ -7,7 +7,7 @@ Transformo dados em decisões. Este portfólio reúne dashboards criados no Powe
 
 ## Projetos
 
-### 1) Vendas I — Receita, Margem e Ticket 
+### 1) Vendas  — Receita, Margem e Ticket 
 Problema: acompanhar receita, margem e ticket por período, produto e canal, entendendo sazonalidade e top performers.  
 KPIs: Receita, Margem, Ticket Médio, Crescimento vs. Ano Anterior, Top N por produto/canal.  
 Imagens:
@@ -16,7 +16,7 @@ Imagens:
 - Por canal/produto:  
   ![Vendas Canal](imagens/vendas_canal.png)
 
-### 2) Financeiro I — Receitas, Despesas e Saldo
+### 2) Financeiro — Receitas, Despesas e Saldo
 Problema: evoluções de receita, despesa e saldo mensal para decisões de orçamento e custos.  
 KPIs: Receita, Despesa, Saldo, Variação M/M e A/A, Real vs. Orçado.  
 Imagens:
