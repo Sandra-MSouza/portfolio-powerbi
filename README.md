@@ -11,46 +11,27 @@ Transformo dados em decisões. Este portfólio reúne dashboards criados no Powe
 Problema: acompanhar receita, margem e ticket por período, produto e canal, entendendo sazonalidade e top performers.  
 KPIs: Receita, Margem, Ticket Médio, Crescimento vs. Ano Anterior, Top N por produto/canal.  
 Imagens:
-- Visão geral:  
-  ![Vendas Overview](imagens/vendas_overview.png)
-- Por canal/produto:  
-  ![Vendas Canal](imagens/vendas_canal.png)
 
 ### 2) Financeiro — Receitas, Despesas e Saldo
 Problema: evoluções de receita, despesa e saldo mensal para decisões de orçamento e custos.  
 KPIs: Receita, Despesa, Saldo, Variação M/M e A/A, Real vs. Orçado.  
 Imagens:
-- Visão geral:  
-  ![Financeiro Overview](imagens/financeiro_overview.png)
-- Centros de custo / categorias:  
-  ![Financeiro Centros](imagens/financeiro_centros.png)
+-
 
 ### 3) Gestão Estoque I — OTIF, SLA e Giro
 Problema: melhorar nível de serviço e disponibilidade com monitoramento de prazos e rupturas.  
 KPIs: OTIF, SLA cumprido, Lead time, Ruptura %, Giro de estoque, Cobertura (dias).  
 Imagens:
-- Visão geral:  
-  ![Estoque Overview](imagens/estoque_overview.png)
-- Itens críticos / ruptura:  
-  ![Estoque Ruptura](imagens/estoque_ruptura.png)
 
 ### 4) Dados Funcionários I (RH) — Turnover, Absenteísmo e Remuneração
 Problema: entender rotatividade, ausências e remuneração por área/cargo para decisões de pessoas.  
 KPIs: Turnover %, Absenteísmo %, Tempo médio de casa, Remuneração média, Contratações/Saídas.  
 Imagens:
-- Visão geral:  
-  ![RH Overview](imagens/rh_overview.png)
-- Por áreas/cargos:  
-  ![RH Areas](imagens/rh_areas.png)
 
 ### 5) Produção Veículos I — Volume por Categoria e Tendências
 Problema: acompanhar produção por tipo/categoria ao longo do tempo e por região/planta.  
 KPIs: Volume produzido, Capacidade utilizada, Tendência por categoria, Mix de produção.  
 Imagens:
-- Visão geral:  
-  ![Producao Overview](imagens/producao_overview.png)
-- Por categoria/região:  
-  ![Producao Categoria](imagens/producao_categoria.png)
 
 ## Processo e Modelagem 
 - ETL no Power Query: limpeza, tipos e padronização de categorias.
@@ -90,10 +71,6 @@ RETURN
     )
 ______________________________________________________________________________________________________________________________
 
-
--- Como visualizar
-As imagens dos dashboards estão na pasta /imagens.
-Caso queira os arquivos .pbix, entre em contato que compartilho versões com dados sintéticos.
 
 ## 📬 Contato
 
